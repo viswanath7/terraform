@@ -379,4 +379,8 @@ Notice that the VPC is created with name and CIDR block as specified in the vari
 
 ## Custom terraform environment variables
 
-Custom environment variables available globally can be provisioned by using TF_VAR_ prefix. 
+Custom environment variables available globally can be provisioned by using TF_VAR_ prefix. For example environment variable set using `export TF_VAR_my_prop=myVal` can be referred within configuration file 
+```
+variable my_prop = {}
+```
+followed by `var.my_prop`.
