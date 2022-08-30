@@ -1,2 +1,7 @@
-.terraform
-.terraform.lock.hcl
+# Local terraform directory
+.terraform/*
+# Terraform state files
+terraform.tfstate.backup
+terraform.tfstate
+# Mac OS hidden file
+.DS_Store
