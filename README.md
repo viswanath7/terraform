@@ -30,12 +30,18 @@ provider "aws" {
 
 As the terraform provider code for managing resources in AWS is not pre-shipped with terraform, it must be downloaded by issuing command `terraform init` which places resouces under `/.terraform* directory` and `terraform-provider-<provider-name>_<version-number>`
 
+![Terraform generated files](./docs/1-0-terraform-generated-files.jpg)
+
 As one needs to authenticate to manage resources, populate environment variables containing user credentials, to access AWS. The user must possess sufficient previlege to manage resources. It is infact the same that's required for AWS CLI. 
   - AWS_SECRET_ACCESS_KEY
   - AWS_ACCESS_KEY_ID
   - AWS_DEFAULT_REGION
 
+![Initialise AWS provider](./docs/1-1-terraform-init-aws-provider.jpg)
+
 As the region is NOT a sensitive information, in our case, we have specified it in plain text, within provider block. 
+
+![Specify provider region in .tf file](./docs/1-2-tf-init-aws-provider-vs-code.jpg)
 
 Verify the population of environment variables by issuing the command `env | grep AWS`
 
@@ -43,8 +49,25 @@ Alternatively, if one would like to globally supply credentials, `~/.aws/credent
 
 For more information, please refer to https://registry.terraform.io/providers/hashicorp/aws/latest/docs
 
-## Publish project
+---
 
+## Using VS code, publish the project in github
+
+Follow the steps as shown in the pictures below 
+* Initialise GIT repository
+  * ![Initialise GIT repository](./docs/1-3-initialise-git-repository.jpg)
+* Ignore terraform files
+  * ![Ignore terraform files](./docs/1-4-git-ignore-tf-files.jpg)
+* Commit files
+  * ![Commit files](./docs/1-5-git-commit.jpg)
+* Add VS code extension
+  * ![Add VS code extension](./docs/1-6-git-publish.jpg)
+* Publish comitted files via VS code extension 
+  * ![Publish comitted files via VS code extension](./docs/1-7-git-publish-public.jpg)
+* Verify published files 
+  * ![Verify published files](./docs/1-8-git-publish-public-verify.jpg)
+
+---
 ## Create VPC and subnets 
 
 Gather the current state by issuing 
