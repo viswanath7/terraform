@@ -32,7 +32,11 @@ As the terraform provider code for managing resources in AWS is not pre-shipped 
 
 ![Terraform generated files](./docs/1-0-terraform-generated-files.jpg)
 
-As one needs to authenticate to manage resources, populate environment variables containing user credentials, to access AWS. The user must possess sufficient previlege to manage resources. It is infact the same that's required for AWS CLI. 
+As one needs to authenticate to manage resources, populate environment variables containing user credentials, to access AWS. 
+
+![AWS credentials](./docs/aws-management-console-credentials.jpg)
+
+The user must possess sufficient previlege to manage resources. It is infact the same that's required for AWS CLI. 
   - AWS_SECRET_ACCESS_KEY
   - AWS_ACCESS_KEY_ID
   - AWS_DEFAULT_REGION
