@@ -72,6 +72,45 @@ Follow the steps as shown in the pictures below
   * ![Verify published files](./docs/1-8-git-publish-public-verify.jpg)
 
 ---
+
+## AWS resources
+
+Moving forward, we shall creation the following AWS resources 
+ - VPC
+ - Subnet
+ - Internet gateway
+ - Security group
+
+### VPC 
+
+Virtual Private Cloud (VPC) is an AWS resource representing dedicated isolated network in the cloud for a region. It's a virtual representation of network infrastructure. The intention of using a VPC is to restrict AWS resource access to other AWS accounts / users. A default VPC is automatically created for AWS users upon account creation. 
+
+A region in AWS typically comprises of multiple availability zones where often an availability zone is a one or more discrete data centres. Virtual machines spinned off executed / run in one of the availability zones. 
+
+A VPC spans across all availability zones for a given region. Large corporations typically provision resources across multiple VPCs in several regions. 
+
+A VPC carries an internal IP addresses range so that resources created within it are assigned an IP address from that range. This involves internal traffic i.e. communication within the VPC. 
+
+### Subnet 
+
+Sub-network that's a component of a VPC; which spans within one availability zone. Essentially, a private network within a VPC. A subnet is assigned an IP address range within the IP address range of the VPC. 
+
+### Internet gateway 
+
+Connects the VPC to the internet so that incoming and outgoing traffic to & from the outside world are allowed by assigning public IP address to resources within the VPC.
+
+### Firewall configuration 
+
+It's essential to secure components or resources by controlling access to VPC and its individual server instances. This objective is typically achieved using a fire-wall configurations like NACL and Security groups that are created at a VPC level and assigned to components of VPC. 
+
+#### Network access control list (NACL) 
+Firewall rules at the level of a subnet.
+
+#### Security group 
+Security control implemented at virtual machine / EC2 instance level for configuring external access (like SSH or HTTP access via the internet)
+
+---
+
 ## Create VPC and subnets 
 
 Gather the current state by issuing 
